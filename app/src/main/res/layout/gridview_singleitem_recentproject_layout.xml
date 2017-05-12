@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <fit.cvut.cz.ambiant.view.ProjectThumbnailImageView
+        android:id="@+id/thumbnail_image_view"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/imageview_frame"
+        android:padding="2dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/thumbnail_title_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/medium_text_size"
+        android:textStyle="bold" />
+</LinearLayout>
