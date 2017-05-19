@@ -1,13 +1,19 @@
 package fit.cvut.cz.ambiant.presenter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.OpenableColumns;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -15,6 +21,8 @@ import fit.cvut.cz.ambiant.model.Interactor;
 import fit.cvut.cz.ambiant.model.entities.Project;
 import fit.cvut.cz.ambiant.view.RecentProjectsViewImpl;
 import fit.cvut.cz.ambiant.view.interfaces.RecentProjectsView;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by George on 06-March-17.
@@ -26,6 +34,7 @@ public class RecentProjectsFragment extends BaseFragment implements RecentProjec
 
     private RecentProjectsView mRecentProjectsView;
     private RecentProjectsAdapter mRecentProjectsAdapter;
+    private RecentProjectsView.OpenNewFileListener listener;
     private ArrayList<Project> mProjects;
 
 
@@ -94,6 +103,7 @@ public class RecentProjectsFragment extends BaseFragment implements RecentProjec
         Log.d(LOG_TAG, "onResume()");
         MainActivity activity = (MainActivity) getActivity();
         activity.getInteractor().getRecentProjects(this);
+        listener = activity;
     }
 
     @Override
@@ -116,9 +126,9 @@ public class RecentProjectsFragment extends BaseFragment implements RecentProjec
 
     @Override
     public void openNewFile() {
-        Snackbar.make(mRecentProjectsView.getRootView(), "Open SAF dialog", Snackbar.LENGTH_SHORT)
-                .setAction("Action", null).show();
-        //TODO open SAF, create the Project object using some utility, then open AR activity and send project as a parameter
+//        Snackbar.make(mRecentProjectsView.getRootView(), "Open SAF dialog", Snackbar.LENGTH_SHORT)
+//                .setAction("Action", null).show();
+        listener.openNewFile();
     }
 
     @Override
@@ -130,7 +140,7 @@ public class RecentProjectsFragment extends BaseFragment implements RecentProjec
     @Override
     public void onRecentProjectUpdate(ArrayList<Project> projects) {
         Log.d("RecentProjectsFragment", "onRecentProjectUpdate, size of array: " + projects.size());
-        Project project = new Project(1,"Combat jet", "tyan", "file:///android_asset/example_models/combat_jet", "Combat jet description", true);
+        Project project = new Project(1, "Combat jet", "tyan", "file:///android_asset/example_models/combat_jet", "Combat jet description", true);
         projects.add(0, project);
 
         this.mProjects.addAll(projects);
@@ -147,5 +157,12 @@ public class RecentProjectsFragment extends BaseFragment implements RecentProjec
     public void openProjectDetails(Long id) {
         Snackbar.make(mRecentProjectsView.getRootView(), "Details", Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show();
+        ((MainActivity)getActivity()).openProjectDetails(id.intValue());
+    }
+
+
+    @Override
+    public View getRootView() {
+        return mRecentProjectsView.getRootView();
     }
 }

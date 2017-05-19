@@ -44,6 +44,7 @@ public class RecentProjectsAdapter extends BaseAdapter {
     @Override
     public Object getItem(int position) {
         return data.get(0);
+        //TODO remove before release
 //        return data.get(position);
     }
 

@@ -5,4 +5,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="button_show_user_manual">User manual</string>
+    <string name="button_show_license_agreement">License agreement</string>
+    <string name="school">CTU, Faculty of Information Technology</string>
+
+    <string name="about">Это программа была создана в рамках дипломной работы "Мобильное приложение для архитекторов", факультета информационных технологий, ЧВУТ.\n Программа разработана на основе заказа от Катерины Новаковой с факультета архитектуры. Разработана Даушеевым Джорджем.</string>
 </resources>

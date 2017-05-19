@@ -38,7 +38,6 @@ public class RecentProjectsViewImpl implements RecentProjectsView, AbsListView.M
     private OpenProjectDetailsListener mOpenProjectDetailsListener;
     private RecentProjectsAdapter mRecentProjectsAdapter;
 
-
     private int selectedCounter;
 
     public RecentProjectsViewImpl(LayoutInflater inflater, ViewGroup container, RecentProjectsAdapter adapter) {
@@ -108,6 +107,7 @@ public class RecentProjectsViewImpl implements RecentProjectsView, AbsListView.M
 
     @Override
     public Bundle getViewState() {
+        // TODO remember the scrolling position
         return null;
     }
 

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "78126963086",
+    "firebase_url": "https://ambiant-server-app.firebaseio.com",
+    "project_id": "ambiant-server-app",
+    "storage_bucket": "ambiant-server-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78126963086:android:5853850eb3155b81",
+        "android_client_info": {
+          "package_name": "fit.cvut.cz.ambiant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78126963086-p16bp5cs005pj1lj3piputg9d86soi2j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fit.cvut.cz.ambiant",
+            "certificate_hash": "ba2cf417f3b905db4c4fb8ddc7734b25dd47af6d"
+          }
+        },
+        {
+          "client_id": "78126963086-tolefrjupiff000eia6gsbhmvfeltimf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9ZVVn0V0qt-__D_2qZYUafxX3LC3LEog"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78126963086-tolefrjupiff000eia6gsbhmvfeltimf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

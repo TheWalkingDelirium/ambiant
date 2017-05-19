@@ -1,5 +1,7 @@
 package fit.cvut.cz.ambiant.model.server_communication;
 
+import fit.cvut.cz.ambiant.model.entities.AccountBriefInfoPOJO;
+
 /**
  * Created by George on 07-May-17.
  */
