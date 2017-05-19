@@ -40,7 +40,7 @@ public class Interactor {
     }
 
     public Project getProject(Long id) {
-        Project mock = new Project(1, "author", "name", null, "description lorem ipsum dorem amet");
+        Project mock = new Project(1, "author", "name", null, "description lorem ipsum dorem amet", null);//fixme
         return mock;
     }
 

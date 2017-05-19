@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import fit.cvut.cz.ambiant.model.entities.Project;
+
 import static android.R.attr.data;
 
 /**
@@ -26,13 +28,7 @@ import static android.R.attr.data;
  */
 
 public class OpenFileUtility {
-    private Context context;
-
-    public OpenFileUtility(Context context) {
-        this.context = context;
-    }
-
-    public void openFile(Intent data) {
+    public static String openFile(Intent data, Context context, Project p) {
         try {
             Uri uri = data.getData();
 //                    if (fileCursor.getLong(fileCursor.getColumnIndex(OpenableColumns.SIZE)) >= FILE_SIZE_LIMIT) {
@@ -60,12 +56,20 @@ public class OpenFileUtility {
                 returnCursor.moveToFirst();
                 filename = returnCursor.getString(nameIndex);
                 String size = Long.toString(returnCursor.getLong(sizeIndex));
+//                if (Integer.valueOf(size) > 35) {
+//                    return -1;
+//                }
             }
             File fileSave = context.getExternalFilesDir(null);
             String sourcePath = context.getExternalFilesDir(null).toString();
             try {
-                copyFileStream(new File(sourcePath + "/" + filename), uri, context);
+                File fileZ = new File(sourcePath,filename);
+                copyFileStream(fileZ, uri, context);
 
+                UnzipUtility unzipUtility = new UnzipUtility();
+                String uploadZipFilePath = (fileZ.getPath());
+                unzipUtility.unzip(uploadZipFilePath, fileZ.getPath().replace(".zip",""), p);
+                return fileZ.getPath().replace(".zip","");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -73,6 +77,7 @@ public class OpenFileUtility {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     public static String getPath(Context context, Uri uri) {
@@ -176,7 +181,7 @@ public class OpenFileUtility {
     }
 
 
-    private void copyFileStream(File dest, Uri uri, Context context)
+    private static void copyFileStream(File dest, Uri uri, Context context)
             throws IOException {
         InputStream is = null;
         OutputStream os = null;

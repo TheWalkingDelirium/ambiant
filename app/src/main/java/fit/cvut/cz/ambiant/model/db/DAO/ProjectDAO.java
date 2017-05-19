@@ -61,16 +61,16 @@ public final class ProjectDAO {
 
         ArrayList<Project> results = new ArrayList<>();
 
-        while (cursor.moveToNext()) {
-            int id = (int) cursor.getLong(cursor.getColumnIndexOrThrow(ProjectEntry._ID));
-            String title = cursor.getString(cursor.getColumnIndexOrThrow(ProjectEntry.COLUMN_NAME_TITLE));
-            String desc = cursor.getString(cursor.getColumnIndexOrThrow(ProjectEntry.COLUMN_NAME_DESC));
-            String author = cursor.getString(cursor.getColumnIndexOrThrow(ProjectEntry.COLUMN_NAME_AUTHOR));
-            String path = cursor.getString(cursor.getColumnIndexOrThrow(ProjectEntry.COLUMN_NAME_PATH));
-
-            Project p = new Project(id, author, title, path, desc);
-            results.add(p);
-        }
+//        while (cursor.moveToNext()) {
+//            int id = (int) cursor.getLong(cursor.getColumnIndexOrThrow(ProjectEntry._ID));
+//            String title = cursor.getString(cursor.getColumnIndexOrThrow(ProjectEntry.COLUMN_NAME_TITLE));
+//            String desc = cursor.getString(cursor.getColumnIndexOrThrow(ProjectEntry.COLUMN_NAME_DESC));
+//            String author = cursor.getString(cursor.getColumnIndexOrThrow(ProjectEntry.COLUMN_NAME_AUTHOR));
+//            String path = cursor.getString(cursor.getColumnIndexOrThrow(ProjectEntry.COLUMN_NAME_PATH));
+//
+//            Project p = new Project(id, author, title, path, desc);
+//            results.add(p);//fixme
+//        }
 
         cursor.close();
 

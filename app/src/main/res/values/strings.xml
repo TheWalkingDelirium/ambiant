@@ -10,5 +10,7 @@
     <string name="button_show_license_agreement">License agreement</string>
     <string name="school">CTU, Faculty of Information Technology</string>
 
+    <string name="vuforia_key">AXLXre7/////AAAAGZdNsnMtY0h1t1ALWzfeS/sqWCHrRtzntlzggm1fJVCFQ6PWNKnj4XtvPo7QF0JHAu3OXTPpK64jDXeOS8kAZyPWG1+/ECt9UGJ3F35pOK+z+KE/T3gbfO89oIHz0dPUUUrXKQ8KD/dR7ju7oBEhARvYJuaHViJyIbyCl4TQRmbZv2ywZEd4pYvTta39tYomSghYyXJLFWHmq+cNtJ7YgNkqo+McSGXQlStdCBdBHobjUKsq8+4O53zKHOLlv3IKRO5ycTVquXrUIXV+wB6tXujYrdstsDnrjQYKwBoFLbdlM1VP9OyzlglQVBX96QGay7eQCUrKR8xe1xECBjxDTqr34CJBD0i5/BKRsTDNHJB7
+</string>
     <string name="about">Это программа была создана в рамках дипломной работы "Мобильное приложение для архитекторов", факультета информационных технологий, ЧВУТ.\n Программа разработана на основе заказа от Катерины Новаковой с факультета архитектуры. Разработана Даушеевым Джорджем.</string>
 </resources>

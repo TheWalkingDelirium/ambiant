@@ -24,8 +24,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 
 import fit.cvut.cz.ambiant.R;
+import fit.cvut.cz.ambiant.ar.DemonstrationActivity;
 import fit.cvut.cz.ambiant.model.Interactor;
 import fit.cvut.cz.ambiant.model.MyFirebaseInstanceIdService;
 import fit.cvut.cz.ambiant.model.OpenFileUtility;
@@ -39,6 +41,11 @@ public class MainActivity extends AppCompatActivity
     private static final int FILE_OPEN_CODE = 1;
     private static final int FILE_SIZE_LIMIT = 35;
     private static final int PROJECT_DETAILS = 777;
+    static final String EXTRA_PROJECT = "EXTRA_PROJECT";
+    public static final String EXTRA_PROJECT_PATH = "EXTRA_PROJECT_PATH";
+    public static final String EXTRA_PROJECT_NAME = "EXTRA_NAME";
+    public static final String EXTRA_PROJECT_EXAMPLE = "EXTRA_EXAMPLE";
+    public static final String EXTRA_PROJECT_TEXTURES = "EXTRA_TEXTURES";
 
     private int selectedNavItem = 0;
     final String LOG_TAG = "myLogs, MainActivity: ";
@@ -215,12 +222,18 @@ public class MainActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == FILE_OPEN_CODE) {
             if (resultCode == RESULT_OK) {
-                OpenFileUtility utility = new OpenFileUtility(this);
-                utility.openFile(data);
+                Project p = new Project(0, "","","","", null);
+                String path = OpenFileUtility.openFile(data, this, p);
+                Log.d(LOG_TAG, "Extracted here: " + path);
+
+                Intent intent = new Intent(this, DemonstrationActivity.class);
+                intent.putExtra(EXTRA_PROJECT_PATH, path);
+                intent.putExtra(EXTRA_PROJECT_EXAMPLE, false);
+                intent.putExtra(EXTRA_PROJECT_TEXTURES, p.getTexturesPath());
+                startActivity(intent);
             }
         }
     }
-
 
     public void openProjectDetails(int id) {
         setFragment(id, "Details");

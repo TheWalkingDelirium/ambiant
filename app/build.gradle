@@ -1,8 +1,18 @@
 apply plugin: 'com.android.application'
 
+def VUFORIA_SDK_DIR = '/../../vuforia-sdk-android-6-2-10'
+def NATIVE_LIB_DIR = 'build/lib'
+def JAR_DIR = 'build/java/vuforia'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDirs = ["$VUFORIA_SDK_DIR/$NATIVE_LIB_DIR/", "libs/"]
+    }
+
     defaultConfig {
         applicationId "fit.cvut.cz.ambiant"
         minSdkVersion 16
@@ -24,6 +34,13 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    compile files("$VUFORIA_SDK_DIR/$JAR_DIR/Vuforia.jar")
+    compile files('libs/gdx.jar')
+    compile files('libs/gdx-backend-android-sources.jar')
+    compile files('libs/gdx-backend-android.jar')
+    compile files('libs/gdx-natives.jar')
+
     compile 'com.google.firebase:firebase-messaging:10.2.4'
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'

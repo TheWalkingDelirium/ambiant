@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import fit.cvut.cz.ambiant.ar.DemonstrationActivity;
 import fit.cvut.cz.ambiant.model.Interactor;
 import fit.cvut.cz.ambiant.model.entities.Project;
 import fit.cvut.cz.ambiant.view.RecentProjectsViewImpl;
@@ -135,12 +136,19 @@ public class RecentProjectsFragment extends BaseFragment implements RecentProjec
     public void openRecentFile(Object project) {
         Snackbar.make(mRecentProjectsView.getRootView(), "Open file", Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show();
+        Project p = (Project) project;
+        Intent intent = new Intent(getContext(), DemonstrationActivity.class);
+
+        intent.putExtra(MainActivity.EXTRA_PROJECT_EXAMPLE, true);
+        intent.putExtra(MainActivity.EXTRA_PROJECT_NAME, p.getName());
+
+        startActivity(intent);
     }
 
     @Override
     public void onRecentProjectUpdate(ArrayList<Project> projects) {
         Log.d("RecentProjectsFragment", "onRecentProjectUpdate, size of array: " + projects.size());
-        Project project = new Project(1, "Combat jet", "tyan", "file:///android_asset/example_models/combat_jet", "Combat jet description", true);
+        Project project = new Project(1, "Combat jet", "tyan", "file:///android_asset/example_models/combat_jet", "Combat jet description", true, null);//// FIXME
         projects.add(0, project);
 
         this.mProjects.addAll(projects);
