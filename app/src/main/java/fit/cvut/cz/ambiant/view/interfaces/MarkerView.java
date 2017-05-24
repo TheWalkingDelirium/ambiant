@@ -5,5 +5,4 @@ package fit.cvut.cz.ambiant.view.interfaces;
  */
 
 public interface MarkerView extends MVPView {
-    
 }

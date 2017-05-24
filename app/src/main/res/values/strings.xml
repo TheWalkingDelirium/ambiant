@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Ambiant</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
 
@@ -10,7 +10,16 @@
     <string name="button_show_license_agreement">License agreement</string>
     <string name="school">CTU, Faculty of Information Technology</string>
 
-    <string name="vuforia_key">AXLXre7/////AAAAGZdNsnMtY0h1t1ALWzfeS/sqWCHrRtzntlzggm1fJVCFQ6PWNKnj4XtvPo7QF0JHAu3OXTPpK64jDXeOS8kAZyPWG1+/ECt9UGJ3F35pOK+z+KE/T3gbfO89oIHz0dPUUUrXKQ8KD/dR7ju7oBEhARvYJuaHViJyIbyCl4TQRmbZv2ywZEd4pYvTta39tYomSghYyXJLFWHmq+cNtJ7YgNkqo+McSGXQlStdCBdBHobjUKsq8+4O53zKHOLlv3IKRO5ycTVquXrUIXV+wB6tXujYrdstsDnrjQYKwBoFLbdlM1VP9OyzlglQVBX96QGay7eQCUrKR8xe1xECBjxDTqr34CJBD0i5/BKRsTDNHJB7
-</string>
-    <string name="about">Это программа была создана в рамках дипломной работы "Мобильное приложение для архитекторов", факультета информационных технологий, ЧВУТ.\n Программа разработана на основе заказа от Катерины Новаковой с факультета архитектуры. Разработана Даушеевым Джорджем.</string>
+
+    <string name="about">This application was created as a part of the diploma thesis "Mobile application for architects" on the Faculty of Information Technology, Czech Technical University. \n The application is developed with cooperation with  Ing. arch. Kateřina Nováková from Faculty of Architecture. Developed by George Dausheyev. \nAlpha version. \nNot ready for publishing. </string>
+    <string name="marker_description">This marker is used as reference-anchor during augmented reality demonstration of the project. Please, print this image. Detailed instruction can be found in a user-manual in the "About section".</string>
+    <string name="marker_fragment_title" translatable="false">Marker</string>
+    <string name="action_licenses">Open-Source software licences</string>
+    <string name="user_manual_title">User Guide</string>
+    <string name="user_manual_content">Export your 3D project into one of this formats: FBX, Collada (.dae), .obj. Place exported file into the same directory, as project\'s texture file. If you want to provide project illustration, please name the image file as thumbnail.jpg. Then add all these files into the ZIP archive and upload to the application server.\n\nTo upload a project archive to the application server, please fulfil all required fields on the webpage and submit a form. If any smartphone is subscribed to that account updates, a project will be automatically exported on appropriate devices.\n\n Choose your project in the mobile application and follow the standard android workflow. After the video screen appear, point it onto the marker image. A project model should appear upon the marker.</string>
+    <string name="subscriptions_title">Subscriptions:</string>
+    <string name="recent_projects_title">Recent projects:</string>
+    <string name="project_detail_name_title">Name</string>
+    <string name="desc_title">Description:</string>
+    <string name="marker_title" translatable="false">Marker:</string>
 </resources>

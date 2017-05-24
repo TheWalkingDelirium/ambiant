@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_margin"
     android:background="@color/colorWindowBackground"
     android:orientation="vertical">
 
@@ -9,12 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorTextPrimary"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:textSize="@dimen/large_text_size"
-        android:text="Subscriptions:"/>
+        android:text="@string/subscriptions_title"/>
 
     <ImageView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:src="@android:drawable/divider_horizontal_dark"
+        android:src="@android:drawable/divider_horizontal_bright"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"

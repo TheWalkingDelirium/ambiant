@@ -18,6 +18,7 @@ import com.vuforia.VideoBackgroundConfig;
 import com.vuforia.VideoMode;
 import com.vuforia.Vuforia;
 
+import fit.cvut.cz.ambiant.BuildConfig;
 import fit.cvut.cz.ambiant.R;
 
 /**
@@ -29,6 +30,7 @@ public class AppSession implements Vuforia.UpdateCallbackInterface {
 
         private static final String LOGTAG = "Vuforia_App_Session";
 
+        private static final String VUFORIA_API_KEY = BuildConfig.VUFORIA_API_KEY + "\n"; // little workaround, gradle couldn't load string properly with \n character in the end;
         // Reference to the current activity
         private Activity mActivity;
         private SessionControl mSessionControl;
@@ -291,7 +293,7 @@ public class AppSession implements Vuforia.UpdateCallbackInterface {
             // Prevent the onDestroy() method to overlap with initialization:
             synchronized (mShutdownLock)
             {
-                Vuforia.setInitParameters(mActivity, mVuforiaFlags, mActivity.getString(R.string.vuforia_key));
+                Vuforia.setInitParameters(mActivity, mVuforiaFlags, VUFORIA_API_KEY);
 
                 do
                 {

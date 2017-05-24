@@ -34,24 +34,17 @@ public class RecentProjectsAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-//        return data.size();
-        if (data.size() == 0)
-            return 0;
-
-        return 30;
+        return data.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return data.get(0);
-        //TODO remove before release
-//        return data.get(position);
+        return data.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-//        return data.get(position).getId();
-        return position;
+        return data.get(position).getId();
     }
 
     @Override
@@ -69,9 +62,7 @@ public class RecentProjectsAdapter extends BaseAdapter {
             convertView = holder.itemView.getRootView();
         }
 
-//        holder.itemView.setProjectBriefInformation(data.get(position));
-        holder.itemView.setProjectBriefInformation(data.get(0));
-
+        holder.itemView.setProjectBriefInformation(data.get(position));
         return convertView;
     }
 

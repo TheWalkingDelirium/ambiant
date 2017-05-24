@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 def VUFORIA_SDK_DIR = '/../../vuforia-sdk-android-6-2-10'
 def NATIVE_LIB_DIR = 'build/lib'
 def JAR_DIR = 'build/java/vuforia'
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     compileSdkVersion 25
@@ -26,6 +29,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'VUFORIA_API_KEY', keystoreProperties['vuforiaKey']
     }
 }
 

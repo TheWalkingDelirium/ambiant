@@ -148,9 +148,7 @@ public class RecentProjectsFragment extends BaseFragment implements RecentProjec
     @Override
     public void onRecentProjectUpdate(ArrayList<Project> projects) {
         Log.d("RecentProjectsFragment", "onRecentProjectUpdate, size of array: " + projects.size());
-        Project project = new Project(1, "Combat jet", "tyan", "file:///android_asset/example_models/combat_jet", "Combat jet description", true, null);//// FIXME
-        projects.add(0, project);
-
+        this.mProjects.clear();
         this.mProjects.addAll(projects);
         mRecentProjectsAdapter.notifyDataSetChanged();
     }

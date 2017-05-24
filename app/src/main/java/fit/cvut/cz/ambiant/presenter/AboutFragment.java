@@ -12,7 +12,9 @@ import java.util.ArrayList;
 
 import fit.cvut.cz.ambiant.model.entities.Project;
 import fit.cvut.cz.ambiant.view.AboutViewImpl;
+import fit.cvut.cz.ambiant.view.LicenseDialogFragment;
 import fit.cvut.cz.ambiant.view.RecentProjectsViewImpl;
+import fit.cvut.cz.ambiant.view.UserManualDialogFragment;
 import fit.cvut.cz.ambiant.view.interfaces.AboutView;
 import fit.cvut.cz.ambiant.view.interfaces.RecentProjectsView;
 
@@ -50,14 +52,14 @@ public class AboutFragment extends BaseFragment implements AboutView.OpenLicense
 
     @Override
     public void openLicenseAgreement() {
-        Snackbar.make(mAboutView.getRootView(), "Open license agreement", Snackbar.LENGTH_SHORT)
-                .setAction("Action", null).show();
+        LicenseDialogFragment dialog = LicenseDialogFragment.newInstance();
+        dialog.show(getFragmentManager(), "LicensesDialog");
     }
 
     @Override
     public void openUserManual() {
-        Snackbar.make(mAboutView.getRootView(), "Open user manual", Snackbar.LENGTH_SHORT)
-                .setAction("Action", null).show();
+        UserManualDialogFragment dialogFragment = UserManualDialogFragment.newInstance();
+        dialogFragment.show(getFragmentManager(), "User Guide");
     }
 
     @Override

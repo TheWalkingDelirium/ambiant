@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ambiant</string>
+    <string name="about">Aplikace byla vytvořena jako část diplomové práce \'Mobilní aplikace pro architekty\' na fakultě Informačních Technologií, České Vysoké Účení Technické.  \nAplikace byla vzvinutá ve spolupráci s Ing. arch. Kateřina Nováková  z fakulty architektury. Zpracována Georgem Dausheyevem.\nAlpha verze.\nNení vhodný k duplikaci.</string>
+    <string name="action_licenses">Open-Source softwarová licenze</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_show_license_agreement">Licenční smlouvy</string>
+    <string name="button_show_user_manual">Úživatelská příručka</string>
+    <string name="desc_title">Popis</string>
+    <string name="marker_description">Tento marker jako referenční bod behem demonstrace projektu s použitím doplněné reality. Prosím, vytiskněte obrázek. Detailní instrukce je popsaná v user-manual.</string>
+    <string name="marker_fragment_title">Marker</string>
+    <string name="navigation_drawer_close"></string>
+    <string name="project_detail_name_title">Jméno</string>
+    <string name="recent_projects_title">Předchozí projekty</string>
+    <string name="school">ČVUT FIT</string>
+    <string name="subscriptions_title">Sledování</string>
+    <string name="user_manual_content">"Exportovát Váš 3D do jednoho z formatů : FBX, Collada (.dae), apd. Prosím exportujte soubor do stejné složky jako projektové texturní soubor. Jestli chcete dodát soubor y ilustrací projektu, prosím  pojmenujte obrázek thumbnail.jpg. Potom archivujte všechny soubory a uploudněte na aplikáční server. "</string>
+    <string name="user_manual_title">Uživatelská příručka</string>
+</resources>

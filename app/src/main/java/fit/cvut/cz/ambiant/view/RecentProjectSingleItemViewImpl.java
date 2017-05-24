@@ -42,7 +42,7 @@ public class RecentProjectSingleItemViewImpl implements RecentProjectSingleItemV
     public void setProjectBriefInformation(Project project) {
         mTitleTextView.setText(project.getName());
         Picasso.with(mContext)
-                .load("file:///android_asset/pikachu.png")
+                .load(project.getThumbnailPath()).error(R.drawable.unavailable)
                 .into(mThumbnailImageView);
     }
 

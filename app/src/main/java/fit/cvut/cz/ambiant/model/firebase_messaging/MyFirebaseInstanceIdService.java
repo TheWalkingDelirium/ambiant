@@ -1,4 +1,4 @@
-package fit.cvut.cz.ambiant.model;
+package fit.cvut.cz.ambiant.model.firebase_messaging;
 
 import android.util.Log;
 

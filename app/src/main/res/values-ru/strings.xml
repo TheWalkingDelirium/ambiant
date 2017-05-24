@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ambiant</string>
+    <string name="about">Приложение было создано в рамках дипломной работы \"Мобильное приложение для архитекторов\", на факультете информационных технологий, Чешский Техничский Университет.</string>
+    <string name="action_licenses">Лицензии приложения с открытым исходным кодом</string>
+    <string name="action_settings"></string>
+    <string name="button_show_license_agreement">Лицензия</string>
+    <string name="button_show_user_manual">Мануал</string>
+    <string name="desc_title">Описание</string>
+    <string name="marker_description">"Этот маркер служит точкой физической привязки для демонстрации в режиме дополненной реальности. "</string>
+    <string name="project_detail_name_title">Имя</string>
+    <string name="recent_projects_title">Недавние проекты</string>
+    <string name="school">Факультет Информационных технологий, Чешский Технический Универ</string>
+    <string name="subscriptions_title">Подписки</string>
+    <string name="user_manual_content">Экспортируйте проект в один из форматов  FBX, Collada (.dae), .obj. Держите экспортированный файл проекта и текстуры в одной папке. Если хотите вложить иллюстрацию, то назовите файл с изображением thumbnail.jpg. Вложите это всё в архив zip и залейте на сервер. Полученный сконвертированный проект пошлите на телефон.\n\nНа телефон откройте свой проект и дождитесь начала видеопоказа. После чего сфокусируйте камеру на изображении маркера.\n</string>
+</resources>

@@ -1,12 +1,7 @@
 package fit.cvut.cz.ambiant.presenter;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.OpenableColumns;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.support.design.widget.NavigationView;
@@ -15,25 +10,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.MimeTypeMap;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.ArrayList;
 
 import fit.cvut.cz.ambiant.R;
 import fit.cvut.cz.ambiant.ar.DemonstrationActivity;
 import fit.cvut.cz.ambiant.model.Interactor;
-import fit.cvut.cz.ambiant.model.MyFirebaseInstanceIdService;
+import fit.cvut.cz.ambiant.model.firebase_messaging.MyFirebaseInstanceIdService;
 import fit.cvut.cz.ambiant.model.OpenFileUtility;
 import fit.cvut.cz.ambiant.model.entities.Project;
 import fit.cvut.cz.ambiant.view.interfaces.RecentProjectsView;
-import fit.cvut.cz.ambiant.view.interfaces.SubscriptionsView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, RecentProjectsView.OpenNewFileListener {
@@ -179,6 +165,8 @@ public class MainActivity extends AppCompatActivity
             f = AboutFragment.newInstance();
         } else if (id == R.id.nav_subscriptions) {
             f = SubscriptionsFragment.newInstance();
+        } else if (id == R.id.nav_markers) {
+            f = MarkersFragment.newInstance();
         }
 
 

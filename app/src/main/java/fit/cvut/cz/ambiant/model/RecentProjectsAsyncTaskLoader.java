@@ -21,12 +21,21 @@ public class RecentProjectsAsyncTaskLoader extends AsyncTask<Void, Void, ArrayLi
 
     @Override
     protected ArrayList<Project> doInBackground(Void... params) {
+
         return repository.readRecentProjectsEntries();
     }
 
     @Override
     protected void onPostExecute(ArrayList<Project> result) {
         super.onPostExecute(result);
+        Project project = new Project(1, "Example Combat Jet", "combat_jet", "file:///android_asset/example_models/combat_jet", "Combat jet description. Example project", true, null);//// FIXME
+        result.add(0, project);
+
+        Project project1 = new Project(2, "Example Knight", "knight", "file:///android_asset/example_models/knight", "Knight. example project", true, null);
+        result.add(project1);
+
+        Project project2 = new Project(3, "Example Teapot", "teapot", "file:///android_asset/example_models/teapot", "Teapot. example project", true, null);
+        result.add(project2);
         listener.onRecentProjectUpdate(result);
     }
 }
